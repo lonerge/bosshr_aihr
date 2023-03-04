@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>token管理</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        function gen_token() {
+            var show = document.getElementById('showResult') //找到存放日志的块
+            show.innerHTML = "" // 每次跑清空div内内容
+            $("#showResult").append("<div><img src='https://www.intogif.com/resource/image/loading/chrome.gif'></div>");
+            var num = document.getElementById('num').value
+            var key = document.getElementById('key').value
+            var expire = document.getElementById('expire').value
+            $.ajax({
+                url:'/gen_token',
+                data: {"num": num, "key": key, "expire": expire},
+                type: 'GET',
+                dataType: 'text',
+                success: function (data_) {
+                    var show = document.getElementById('showResult') //找到存放日志的块
+                    show.innerHTML = data_ // 每次跑清空div内内容
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    var show = document.getElementById('showResult') //找到存放日志的块
+                    show.innerHTML = "" // 每次跑清空div内内容
+                    alert('异常...请重试..')
+                }
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="head-search" >
+    <div class="logo">
+    </div>
+    <div class="search-form">
+        <!--					<form name="searchform" method="get" id="searchform" action="">-->
+        <input name="page" value="" type="hidden">
+        <div id="search-hd" class="search-hd">
+            <br>
+            <br>
+            <div class="search-bg"> token管理 </div>
+            <br>
+            数量: <input type="text" value="1" placeholder="获取多少个token " id="num" size="25">
+            <br>
+            <br>
+            时效: <input type="text" placeholder="每个token最大使用失效(单位/天, 0为3小时)" id="expire" >
+            <br>
+            <br>
+            钥匙: <input type="text" placeholder="你的key, 每个人固定一个 " id="key" >
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="init_button" onclick="gen_token()" >生成token</button>
+        </div>
+        <!--					</form>-->
+    </div>
+    <div class="erweima hidden-sm-md-lg">
+        <div class="clear"></div>
+    </div>
+</div>
+
+<br>
+<div class="showResult" align="center" id="showResult"></div>
+<br>
+
+</body>
+
+
+
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    body, .log{
+        background-image: linear-gradient(to bottom , #7A88FF, #7AFFAF);
+    }
+    .head-search{
+        text-align:center;
+    }
+    .button{
+        color:#FFFFFF;
+        background-color: #1da1f2
+    }
+    .log{
+        width: 98%;
+        height: 500px;
+        background-color: #FFFFFF;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+    .log_text{
+        height: 500px;
+        margin-left: 80px;
+        font-size: 18px;
+        color: #111111;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    input{
+        outline-style: none ;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 13px 14px;
+        width: 500px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Microsoft soft";
+    }
+    input:focus{
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+
+</style>
+</html>

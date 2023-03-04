@@ -1,0 +1,344 @@
+/* main */
+
+.gt .wrap {
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.gt .full {
+    padding: 0;
+    background: 0 0;
+    width: 100%!important;
+    float: none;
+    position: relative;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #262626;
+    line-height: 1.8;
+}
+
+.gt .entry {
+    display: flex;
+}
+
+
+/* main左边 */
+
+.gt .nav {
+    width: 300px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.gt .menu {
+    padding: 0!important;
+    margin: 0!important;
+    list-style: none!important;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%);
+}
+
+.gt .menu li {
+    position: relative;
+    margin: 0!important;
+    padding: 0!important;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.gt .before {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 10px;
+    width: 2px;
+    height: 32px;
+    background: #417505;
+    content: "";
+}
+
+.gt .menu a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #262626;
+}
+
+.gt .menu a:hover {
+    background-color: #f3f3f3;
+}
+
+
+/* main右侧 */
+
+.gt .content {
+    width: 100%;
+    padding: 20px 40px;
+    margin-left: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%);
+}
+
+.gt .content h2 {
+    font-family: inherit;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 500;
+    margin: 0 -40px 30px!important;
+    padding: 0 40px 20px!important;
+    font-size: 18px!important;
+    line-height: 26px!important;
+    border-bottom: 1px solid #f1f1f1!important;
+    color: #262626!important;
+}
+
+.gt .form {
+    display: block;
+    margin-top: 0em;
+}
+
+.gt .item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+
+/* 账号 */
+
+.gt .zh .label {
+    line-height: 22px;
+    width: 120px;
+    margin: 0;
+    margin-left: 13px;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 授权码 */
+
+.gt .sqm .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    margin-left: 13px;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .sqm .input {
+    width: 540px;
+}
+
+.gt .item-sqm {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+    color: #474747;
+    border: 1px solid #d3d3d3;
+    line-height: 18px;
+    outline: 0;
+    box-sizing: border-box;
+    background: 0 0;
+    border-radius: 4px;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}
+
+
+/* 新消息回复时间 */
+
+.gt .xxx .label {
+    line-height: 50px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .xxxhf {
+    padding: 15px 15px;
+    width: 540px;
+    font-size: 14px;
+    color: #474747;
+    line-height: 18px;
+    outline: 0;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}
+
+
+/* 首句回复内容 */
+
+.gt .sj1 .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .sj1 .input {
+    width: 540px;
+}
+
+.gt .item-sj1 {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+    color: #474747;
+    border: 1px solid #d3d3d3;
+    line-height: 18px;
+    outline: 0;
+    box-sizing: border-box;
+    background: 0 0;
+    border-radius: 4px;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}
+
+.gt .sj2 .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .sj2 .input {
+    width: 540px;
+}
+
+.gt .item-sj2 {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+    color: #474747;
+    border: 1px solid #d3d3d3;
+    line-height: 18px;
+    outline: 0;
+    box-sizing: border-box;
+    background: 0 0;
+    border-radius: 4px;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}
+
+.gt .sj3 .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .sj3 .input {
+    width: 540px;
+}
+
+.gt .item-sj3 {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+    color: #474747;
+    border: 1px solid #d3d3d3;
+    line-height: 18px;
+    outline: 0;
+    box-sizing: border-box;
+    background: 0 0;
+    border-radius: 4px;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}
+
+
+/* 首句补充 */
+
+.gt .sj4 {
+    margin-top: 70px;
+    margin-left: 310px;
+}
+
+.gt .sj4 .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .sj4 .cj {
+    margin-right: 5px;
+}
+
+.gt .sj5 {
+    margin-top: 100px;
+    margin-left: 140px;
+}
+
+
+/* 第二句回复内容 */
+
+.gt .drj .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.gt .kq {
+    margin-right: 5px;
+}
+
+.gt .drj .input {
+    width: 540px;
+}
+
+.gt .drj .item-drj {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+    color: #474747;
+    border: 1px solid #d3d3d3;
+    line-height: 18px;
+    outline: 0;
+    box-sizing: border-box;
+    background: 0 0;
+    border-radius: 4px;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}

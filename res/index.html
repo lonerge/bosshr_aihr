@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能HR</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='使用必看.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='打招呼设置1.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='打招呼设置2.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='沟通设置.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static',filename='index.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='打招呼设置1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='打招呼设置2.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='沟通设置.js') }}"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <!-- 菜单 -->
+        <ul class="header-nav">
+            <li class="current header1" style="display: block">
+                <a href="javascript:;">使用必看</a>
+            </li>
+
+            <li class="header2">
+                <a href="javascript:;">打招呼设置1</a>
+            </li>
+            <li class="header3">
+                <a href="javascript:;">打招呼设置2</a>
+            </li>
+            <li class="header4">
+                <a href="javascript:;">沟通设置</a>
+            </li>
+
+        </ul>
+        <input value="" class="token" placeholder="授权码" id="token">
+
+        <!-- 右侧按钮 -->
+
+        <ul class="header-nav1">
+            <li class="na">
+                <a href="javascript:;" id="csh">初始化账号</a>
+            </li>
+            <li class="na">
+                <a href="javascript:;" id="bc">保存设置</a>
+            </li>
+            <li class="na">
+                <a href="javascript:;" id="qddzh">启动打招呼</a>
+            </li>
+            <li class="na">
+                <a href="javascript:;" id="znhf">启动智能回复</a>
+            </li>
+            <li class="na">
+                <a href="javascript:;" id="gb">关闭所有服务</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- main -->
+    <div class="main">
+        <!-- 使用必看 -->
+        <div class="item sy" style="display: block">
+            <div class="content">
+                <h1>免责声明</h1>
+                <h3>
+                    一、软件运行原理是模拟人工进行鼠标点击操作，并未加入任何破解功能，禁止用于非法用途，否则后果自负。
+                </h3>
+                <h3>
+                    二、因用户使用软件引发的损失和非法事件，软件作者概不负责，亦不承担任何民事或刑事法律责任。
+                </h3>
+                <h3>
+                    三、当你第一次使用此软件的那一刻起，就将被视为对本声明全部内容的认可，同时您必须认可上述免责条款。
+                </h3>
+                <h3>四、如有任何异议，建议立刻删除软件且停止使用。</h3>
+            </div>
+        </div>
+
+        <!-- 打招呼设置1 -->
+        <div class="item zh1" style="display: none">
+            <div class="wrap">
+                <div class="full">
+                    <div class="entry">
+                        <!-- 左侧栏 -->
+                        <div class="nav">
+                            <ul class="menu">
+                                <li class="menu-zh11">
+                                    <div class="before" style="display: block"></div>
+                                    <a href="javascript:;">打招呼优先级</a>
+                                </li>
+                                <li class="menu-zh12">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">性别/年龄设置</a>
+                                </li>
+                                <li class="menu-zh13">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">工作经验/地点设置</a>
+                                </li>
+                                <li class="menu-zh14">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">活跃度/期望岗位设置</a>
+                                </li>
+                                <li class="menu-zh15">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">薪资要求</a>
+                                </li>
+                                <li class="menu-zh16">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">学历要求</a>
+                                </li>
+                                <li class="menu-zh17">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">求职意向</a>
+                                </li>
+                                <li class="menu-zh18">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">经验要求</a>
+                                </li>
+                                <li class="menu-zh19">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">学校、公司/自我介绍</a>
+                                </li>
+                                <li class="menu-zh110">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">运行日志</a>
+                                </li>
+                                <li class="menu-zh111">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">检查日志</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 右侧栏 -->
+                        <!-- 1、打招呼优先级 -->
+                        <div class="content" style="display: block" id="zh11">
+                            <h2>打招呼优先级</h2>
+                            <form class="form">
+                                <!-- 开启牛人打招呼 -->
+                                <div class="item dzh1">
+                                    <input type="checkbox" class="kq" />
+                                    <label class="label">开启牛人打招呼</label>
+                                </div>
+                                <!-- 优先打招呼 -->
+                                <div class="item dzh2">
+                                    <input type="checkbox" class="yx" />
+                                    <label class="label">优先打招呼</label>
+                                </div>
+                                <!-- 不与同事沟通过的打招呼 -->
+                                <div class="item dzh3">
+                                    <input type="checkbox" class="ts" />
+                                    <label class="label">不与同事沟通过的打招呼</label>
+                                </div>
+                                <!-- 优先与不消耗沟通权益的牛人打招呼 -->
+                                <div class="item dzh4">
+                                    <input type="checkbox" class="bxh" />
+                                    <label class="label">优先与不消耗沟通权益的牛人打招呼</label
+                    >
+                  </div>
+                  <!-- 权益上限自动下一贴 -->
+                  <div class="item dzh5">
+                    <input type="checkbox" class="qy" />
+                    <label class="label">权益上限自动下一贴</label>
+                                </div>
+                                <!-- 次数完成后自动下一贴 -->
+                                <div class="item dzh6">
+                                    <input type="checkbox" class="cs" />
+                                    <label class="label">次数完成后自动下一贴</label>
+                                </div>
+                                <!--  -->
+                                <div class="item dzh7">
+                                    <label class="label">每&nbsp;&nbsp;<input
+                        type="text"
+                        class="k"
+                        name="time"
+                        id="zh1time1"
+                        style="width: 20px; height: 20px"
+                      />&nbsp;&nbsp;至&nbsp;&nbsp;<input
+                        type="text"
+                        class="k"
+                        name="time"
+                        id="zh1time2"
+                        style="width: 20px; height: 20px"
+                      />&nbsp;&nbsp;分钟执行一轮打招呼，最长停留&nbsp;&nbsp;<input
+                        type="text"
+                        class="k"
+                        name="time"
+                        id="zh1time3"
+                        style="width: 20px; height: 20px"
+                      />&nbsp;&nbsp;分钟
+                    </label>
+                                </div>
+                                <!--  -->
+                                <div class="item dzh8">
+                                    <label class="label">打招呼的帖子数量&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="sl"
+                      />1&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="sl"
+                      />2&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="sl"
+                      />3</label
+                    >
+                  </div>
+                  <!--  -->
+                  <div class="item dzh9">
+                    <label class="label"
+                      >第&nbsp;&nbsp;<input
+                        type="text"
+                        class="k"
+                        name="time"
+                        id="zh1time4"
+                        style="width: 20px; height: 20px"
+                      />&nbsp;&nbsp;张帖子，打招呼&nbsp;&nbsp;<input
+                        type="text"
+                        class="k"
+                        name="time"
+                        id="zh1time5"
+                        style="width: 20px; height: 20px"
+                      />&nbsp;&nbsp;次</label
+                    >
+                  </div>
+                </form>
+              </div>
+              <!-- 2、性别/年龄设置 -->
+              <div class="content" style="display: none" id="zh12">
+                <h2>性别/年龄设置</h2>
+                  <form class="form" id="age">
+                      性别:
+                      <input type="radio" name="gender" value="不限" />不限
+                      <input type="radio" name="gender" value="男" />男
+                      <input type="radio" name="gender" value="女" />女
+
+                  </form>
+              </div>
+              <!-- 3、工作经验/地点设置 -->
+              <div class="content" style="display: none" id="zh13">
+                <h2>工作经验/地点设置</h2>
+              </div>
+              <!-- 4、活跃度/期望岗位设置 -->
+              <div class="content" style="display: none" id="zh14">
+                <h2>活跃度/期望岗位设置</h2>
+              </div>
+              <!-- 5、薪资要求 -->
+              <div class="content" style="display: none" id="zh15">
+                <h2>薪资要求</h2>
+              </div>
+              <!-- 6、学历要求 -->
+              <div class="content" style="display: none" id="zh16">
+                <h2>学历要求</h2>
+              </div>
+              <!-- 7、求职意向 -->
+              <div class="content" style="display: none" id="zh17">
+                <h2>求职意向</h2>
+              </div>
+              <!-- 8、经验要求 -->
+              <div class="content" style="display: none" id="zh18">
+                <h2>经验要求</h2>
+              </div>
+              <!-- 9、学校、公司/自我介绍 -->
+              <div class="content" style="display: none" id="zh19">
+                <h2>学校、公司/自我介绍</h2>
+              </div>
+              <!-- 10、运行日志 -->
+              <div class="content" style="display: none" id="zh110">
+                <h2>运行日志</h2>
+              </div>
+              <!-- 11、检查日志 -->
+              <div class="content" style="display: none" id="zh111">
+                <h2>检查日志</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 打招呼设置2 -->
+      <div class="item zh2" style="display: none">
+        <div class="wrap">
+          <div class="full">
+            <div class="entry">
+              <!-- 左侧栏 -->
+              <div class="nav">
+                <ul class="menu">
+                  <li class="menu-zh21">
+                    <div class="before" style="display: block"></div>
+                    <a href="javascript:;">开启简历关键词筛选</a>
+                  </li>
+                  <li class="menu-zh22">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">开启区域筛选</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- 右侧栏 -->
+              <!-- 1、开启简历关键词筛选 -->
+              <div class="content" style="display: block" id="zh21">
+                <h2>开启简历关键词筛选</h2>
+              </div>
+              <!-- 2、开启区域筛选 -->
+              <div class="content" style="display: none" id="zh22">
+                <h2>开启区域筛选</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 沟通设置 -->
+      <div class="item gt" style="display: none">
+        <div class="wrap">
+          <div class="full">
+            <div class="entry">
+              <!-- 左侧栏 -->
+              <div class="nav">
+                <ul class="menu">
+                  <li class="menu-gt1">
+                    <div class="before" style="display: block"></div>
+                    <a href="javascript:;">账号和回复时间</a>
+                  </li>
+                  <li class="menu-gt2">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">首句回复内容</a>
+                  </li>
+                  <li class="menu-gt3">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">第二句回复内容</a>
+                  </li>
+                  <li class="menu-gt4">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">交换设置</a>
+                  </li>
+                  <li class="menu-gt5">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">定时运行</a>
+                  </li>
+                  <li class="menu-gt6">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">不沟通的帖子</a>
+                  </li>
+                  <li class="menu-gt7">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">年龄/性别设置</a>
+                  </li>
+                  <li class="menu-gt8">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">学历设置</a>
+                  </li>
+                  <li class="menu-gt9">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">过滤沟通</a>
+                  </li>
+                  <li class="menu-gt10">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">其他设置</a>
+                  </li>
+                  <li class="menu-gt11">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">运行日志</a>
+                  </li>
+                  <li class="menu-gt12">
+                    <div class="before" style="display: none"></div>
+                    <a href="javascript:;">沟通日志</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- 右侧栏 -->
+              <!-- 1、账号和回复时间 -->
+              <div class="content" style="display: block" id="gt1">
+                <h2>账号和回复时间</h2>
+                <form class="form">
+                  <!-- 账号 -->
+                  <div class="item zh">
+                    <label class="label">账号</label>
+                                    <select name="account" id="account">
+                      <option value="">账号1</option>
+                    </select>
+                                </div>
+                                <!-- 授权码 -->
+                                <div class="item sqm">
+                                    <label class="label">授权码</label>
+                                    <div class="input">
+                                        <input type="text" class="item-sqm" maxlength="20" data-label="授权码" />
+                                    </div>
+                                </div>
+                                <!-- 新消息回复时间 -->
+                                <div class="item xxx">
+                                    <label class="label">新消息回复时间</label>
+                                    <div class="xxxhf">
+                                        <!-- 1 -->
+                                        <input type="time" name="time" id="gttime1" /> &nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="time" name="time" id="gttime2" />&nbsp;&nbsp;时/分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新消息回复时间&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime3" style="width: 40px; height: 20px" />&nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime4" style="width: 40px; height: 20px" />&nbsp;&nbsp;秒<br /><br />
+                                        <!-- 2 -->
+                                        <input type="time" name="time" id="gttime5" /> &nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="time" name="time" id="gttime6" />&nbsp;&nbsp;时/分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新消息回复时间&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime7" style="width: 40px; height: 20px" />&nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime8" style="width: 40px; height: 20px" />&nbsp;&nbsp;秒<br /><br />
+                                        <!-- 3 -->
+                                        <input type="time" name="time" id="gttime9" /> &nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="time" name="time" id="gttime10" />&nbsp;&nbsp;时/分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新消息回复时间&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime11" style="width: 40px; height: 20px" />&nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime12" style="width: 40px; height: 20px" />&nbsp;&nbsp;秒<br /><br />
+                                        <!-- 4 -->
+                                        <input type="time" name="time" id="gttime13" /> &nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="time" name="time" id="gttime14" />&nbsp;&nbsp;时/分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新消息回复时间&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime15" style="width: 40px; height: 20px" />&nbsp;&nbsp;至&nbsp;&nbsp;
+                                        <input type="text" class="hf" name="time" id="gttime16" style="width: 40px; height: 20px" />&nbsp;&nbsp;秒<br /><br />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 2、首句回复内容 -->
+                        <div class="content" style="display: none" id="gt2">
+                            <h2>首句回复内容</h2>
+                            <form class="form">
+                                <!-- 首句1 -->
+                                <div class="item sj1">
+                                    <label class="label">首句1</label>
+                                    <div class="input">
+                                        <input type="text" class="item-sj1" maxlength="100" data-label="首句回复内容" />
+                                    </div>
+                                </div>
+                                <!-- 首句2 -->
+                                <div class="item sj2">
+                                    <label class="label">首句2</label>
+                                    <div class="input">
+                                        <input type="text" class="item-sj2" maxlength="100" data-label="首句回复内容" />
+                                    </div>
+                                </div>
+                                <!-- 首句3 -->
+                                <div class="item sj3">
+                                    <label class="label">首句3</label>
+                                    <div class="input">
+                                        <input type="text" class="item-sj3" maxlength="100" data-label="首句回复内容" />
+                                    </div>
+                                </div>
+                                <!-- 首句补充 -->
+                                <div class="item sj4">
+                                    <input type="checkbox" class="cj" />
+                                    <label class="label">采集成功后不回复</label>
+                                </div>
+                                <div class="item sj5">
+                                    <p>
+                                        <strong>
+                        建议话术内容重点突出引导同意交换联系方式，把牛人联系方式拿到手
+                      </strong>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 3、第二句回复内容 -->
+                        <div class="content" style="display: none" id="gt3">
+                            <h2>第二句回复内容</h2>
+                            <form class="form">
+                                <div class="item drj">
+                                    <input type="checkbox" class="kq" /><label class="label">开启第二句回复</label
+                    >
+                    <div class="input">
+                      <input
+                        type="text"
+                        class="item-drj"
+                        maxlength="100"
+                        data-label="第二句回复内容"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- 4、交换设置 -->
+              <div class="content" style="display: none" id="gt4">
+                <h2>交换设置</h2>
+              </div>
+              <!-- 5、定时运行 -->
+              <div class="content" style="display: none" id="gt5">
+                <h2>定时运行</h2>
+              </div>
+              <!-- 6、不沟通的帖子 -->
+              <div class="content" style="display: none" id="gt6">
+                <h2>不沟通的帖子</h2>
+              </div>
+              <!-- 7、年龄/性别设置 -->
+              <div class="content" style="display: none" id="gt7">
+                <h2>年龄/性别设置</h2>
+              </div>
+              <!-- 8、学历设置 -->
+              <div class="content" style="display: none" id="gt8">
+                <h2>学历设置</h2>
+              </div>
+              <!-- 9、过滤沟通 -->
+              <div class="content" style="display: none" id="gt9">
+                <h2>过滤沟通</h2>
+              </div>
+              <!-- 10、其他设置 -->
+              <div class="content" style="display: none" id="gt10">
+                <h2>其他设置</h2>
+              </div>
+              <!-- 11、运行日志 -->
+              <div class="content" style="display: none" id="gt11">
+                <h2>运行日志</h2>
+              </div>
+              <!-- 12、沟通日志 -->
+              <div class="content" style="display: none" id="gt12">
+                <h2>沟通日志</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+<script type="text/javascript" src="{{ url_for('static',filename='jquery-3.5.1.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='bot.js') }}"></script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>测试</title>
+    <script src="{{ url_for('static',filename='jquery-3.5.1.js') }}"></script>
+
+</head>
+<body>
+<div class="head-search" >
+    <div class="logo">
+    </div>
+    <div class="search-form">
+        <div id="search-hd" class="search-hd">
+            <br>
+            <br>
+            <div class="search-bg"> 测试 </div>
+            <br>
+            密钥: <input type="text" placeholder="填入你的授权码 " id="token" >
+            <br>
+            <br>
+            数量: <input type="text" value="10" placeholder="每条工作打招呼的数量 " id="hello_num" size="25">
+            <br>
+            <br>
+            筛选: <input type="text" placeholder="关键字筛选: 人物介绍出现关键字才打招呼(如: 房地产 面访)(空格隔开) " id="filter" >
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="init_button" onclick="init();" >初始化测试</button>
+            <button id="button" onclick="test();" >打招呼测试</button>
+            <button id="quit_button" onclick="quit();" >关闭服务</button>
+        </div>
+    </div>
+    <div class="erweima hidden-sm-md-lg">
+        <div class="clear"></div>
+    </div>
+</div>
+
+<br>
+<div class="showResult" align="center" id="showResult"></div>
+<br>
+
+</body>
+
+<script type="text/javascript" src="{{ url_for('static',filename='bot.js') }}"></script>
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    body, .log{
+        background-image: linear-gradient(to bottom , #7A88FF, #7AFFAF);
+    }
+    .head-search{
+        text-align:center;
+    }
+    .button{
+        color:#FFFFFF;
+        background-color: #1da1f2
+    }
+    .log{
+        width: 98%;
+        height: 500px;
+        background-color: #FFFFFF;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+    .log_text{
+        height: 500px;
+        margin-left: 80px;
+        font-size: 18px;
+        color: #111111;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    input{
+        outline-style: none ;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 13px 14px;
+        width: 500px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Microsoft soft";
+    }
+    input:focus{
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+
+</style>
+</html>

@@ -1,0 +1,66 @@
+{
+    "web_choose":{
+        "job_list_location":[
+            {
+                "job_name":"【东莞全区】羊奶创业合伙人（本地私域） 18-35K",
+                "job_citys":[
+                    "茶山镇",
+                    "常平镇"
+                ]
+            },
+            {
+                "job_name":"【成都】羊奶配送员+底薪+提供吃住+4重礼 7-9K",
+                "job_citys":[
+                    "成华区",
+                    "崇州市"
+                ]
+            }
+
+        ],
+        "no_vip":{
+            "experience":[
+              "不限"
+            ],
+            "education":[
+              "不限"
+
+            ],
+            "salary":[
+              "不限", "3-5K"
+            ],
+            "intention":[
+              "离职-随时到岗", "在职-暂不考虑"
+
+            ]
+        },
+        "vip":{
+            "age":[
+                "不限"
+            ],
+            "gender":[
+                "不限"
+            ],
+            "exchanged":[
+                "不限"
+            ],
+            "job_hopping_frequency":[
+                "不限"
+            ],
+            "online":[
+                "不限"
+            ],
+            "already_saw":[
+                "不限"
+            ],
+            "school":[
+                "不限"
+            ],
+            "major":[
+                "不限"
+            ]
+        }
+    }
+}
+
+
+

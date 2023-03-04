@@ -1,0 +1,234 @@
+/* main */
+
+.zh1 .wrap {
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.zh1 .full {
+    padding: 0;
+    background: 0 0;
+    width: 100%!important;
+    float: none;
+    position: relative;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #262626;
+    line-height: 1.8;
+}
+
+.zh1 .entry {
+    display: flex;
+}
+
+
+/* main左边 */
+
+.zh1 .nav {
+    width: 300px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.zh1 .menu {
+    padding: 0!important;
+    margin: 0!important;
+    list-style: none!important;
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%);
+}
+
+.zh1 .menu li {
+    position: relative;
+    margin: 0!important;
+    padding: 0!important;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.zh1 .before {
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 10px;
+    width: 2px;
+    height: 32px;
+    background: #417505;
+    content: "";
+}
+
+.zh1 .menu a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #262626;
+}
+
+.zh1 .menu a:hover {
+    background-color: #f3f3f3;
+}
+
+
+/* main右侧 */
+
+.zh1 .content {
+    width: 100%;
+    padding: 20px 40px;
+    margin-left: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 6%);
+}
+
+.zh1 .content h2 {
+    font-family: inherit;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 500;
+    margin: 0 -40px 30px!important;
+    padding: 0 40px 20px!important;
+    font-size: 18px!important;
+    line-height: 26px!important;
+    border-bottom: 1px solid #f1f1f1!important;
+    color: #262626!important;
+}
+
+.zh1 .form {
+    display: block;
+    margin-top: 0em;
+}
+
+.zh1 .item {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+
+/* 打招呼优先级 */
+
+.zh1 .dzh1 {
+    float: left;
+}
+
+.zh1 .dzh3 {
+    float: left;
+}
+
+.zh1 .dzh5 {
+    float: left;
+}
+
+.zh1 .dzh7 {
+    float: left;
+}
+
+.zh1 .dzh8 {
+    float: left;
+}
+
+.zh1 .dzh9 {
+    float: left;
+}
+
+.zh1 .dzh1 .label {
+    line-height: 40px;
+    width: 400px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh2 .label {
+    line-height: 40px;
+    width: 120px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh3 .label {
+    line-height: 40px;
+    width: 400px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh4 .label {
+    line-height: 40px;
+    width: 300px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh5 .label {
+    line-height: 40px;
+    width: 400px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh6 .label {
+    line-height: 40px;
+    width: 150px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh7 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    margin-left: 150px;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh8 .label {
+    line-height: 40px;
+    width: 400px;
+    margin: 0;
+    margin-left: 230px;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh9 .label {
+    line-height: 40px;
+    width: 300px;
+    margin: 0;
+    margin-left: 230px;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
