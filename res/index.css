@@ -39,6 +39,11 @@ strong {
     height: 40px;
     background-color: #ffffff;
 }
+.header_token {
+    width: 300px;
+    height: 38px;
+
+}
 
 .header li {
     list-style-type: none;
@@ -72,6 +77,7 @@ strong {
 }
 
 .header-nav>li>a:hover {
+    border: 1px solid #dcdfe6;
     background-color: #c0c0c0;
     color: #333;
 }
@@ -96,19 +102,11 @@ strong {
     height: 41px;
     text-align: center;
 }
-.token {
-    padding: 2px;
-    position: relative;
-    /*float: center;*/
-    width: 350px;
-    height: 30px;
-    text-align: center;
-}
 
 #csh,
 #bc,
-#qddzh,
-#znhf,
+#dzh,
+#hf,
 #gb {
     display: block;
     width: 100%;
@@ -118,5 +116,7 @@ strong {
 }
 
 .header-nav1 li a:hover {
-    background-color: #eee;
+    border: 1px solid #dcdfe6;
+    background-color: #c0c0c0;
+    color: #333;
 }

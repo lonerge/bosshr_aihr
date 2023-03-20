@@ -6,15 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>智能HR</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='使用必看.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='打招呼设置1.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='打招呼设置2.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='沟通设置.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static',filename='index.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='打招呼设置1.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='打招呼设置2.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='沟通设置.js') }}"></script>
+<!--    <link rel="stylesheet" href="./CSS/index.css" />-->
+        <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}" />
+<!--    <link rel="stylesheet" href="./CSS/how_to_use.css" />-->
+        <link rel="stylesheet" href="{{ url_for('static',filename='how_to_use.css') }}" />
+<!--    <link rel="stylesheet" href="./CSS/hello.csshello1.css" />-->
+        <link rel="stylesheet" href="{{ url_for('static',filename='hello1.css') }}" />
+<!--    <link rel="stylesheet" href="./CSS/hello2.css" />-->
+        <link rel="stylesheet" href="{{ url_for('static',filename='hello2.css') }}" />
+<!--    <link rel="stylesheet" href="./CSS/communicate.css" />-->
+        <link rel="stylesheet" href="{{ url_for('static',filename='communicate.css') }}" />
+<!--    <script type="text/javascript" src="./JS/index.js"></script>-->
+        <script type="text/javascript" src="{{ url_for('static',filename='index.js') }}"></script>
+
+        <script src="{{ url_for('static',filename='jquery-3.5.1.js') }}"></script>
+        <script src="{{ url_for('static',filename='bot.js') }}"></script>
+<!--    <script src="./JS/jquery-3.5.1.js"></script>-->
+<!--    <script src="./JS/bot.js"></script>-->
 </head>
 
 <body>
@@ -35,12 +43,10 @@
             <li class="header4">
                 <a href="javascript:;">沟通设置</a>
             </li>
-
         </ul>
-        <input value="" class="token" placeholder="授权码" id="token">
+        <input class="header_token" placeholder="授权码" id="token" />
 
         <!-- 右侧按钮 -->
-
         <ul class="header-nav1">
             <li class="na">
                 <a href="javascript:;" id="csh">初始化账号</a>
@@ -49,33 +55,44 @@
                 <a href="javascript:;" id="bc">保存设置</a>
             </li>
             <li class="na">
-                <a href="javascript:;" id="qddzh">启动打招呼</a>
+                <a href="javascript:;" id="dzh">启动打招呼</a>
             </li>
             <li class="na">
-                <a href="javascript:;" id="znhf">启动智能回复</a>
+                <a href="javascript:;" id="hf">启动智能回复</a>
             </li>
             <li class="na">
                 <a href="javascript:;" id="gb">关闭所有服务</a>
             </li>
         </ul>
     </div>
-
     <!-- main -->
     <div class="main">
+        <div class="showResult" align="center" id="showResult"></div>
+
         <!-- 使用必看 -->
         <div class="item sy" style="display: block">
             <div class="content">
                 <h1>免责声明</h1>
                 <h3>
-                    一、软件运行原理是模拟人工进行鼠标点击操作，并未加入任何破解功能，禁止用于非法用途，否则后果自负。
+                    一. 软件运行原理是模拟人工进行鼠标点击操作，并未加入任何破解功能，禁止用于非法用途，否则后果自负。
                 </h3>
                 <h3>
-                    二、因用户使用软件引发的损失和非法事件，软件作者概不负责，亦不承担任何民事或刑事法律责任。
+                    二. 因用户使用软件引发的损失和非法事件，软件作者概不负责，亦不承担任何民事或刑事法律责任。
                 </h3>
                 <h3>
-                    三、当你第一次使用此软件的那一刻起，就将被视为对本声明全部内容的认可，同时您必须认可上述免责条款。
+                    三. 当你第一次使用此软件的那一刻起，就将被视为对本声明全部内容的认可，同时您必须认可上述免责条款。
                 </h3>
-                <h3>四、如有任何异议，建议立刻删除软件且停止使用。</h3>
+                <h3>四. 如有任何异议，建议立刻删除软件且停止使用。</h3>
+                <h1>使用说明</h1>
+                <h3>
+                    一. 初始化账号: 首次运行请先初始化; 发布的职位变动(如增加,减少)请初始化; 初始化后可对每个帖子单独设置
+                </h3>
+                <h3>
+                    二. 保存设置: 保存所有设置到本地, 下次自动读取; 确定好设置请先保存
+                </h3>
+                <h3>三. 启动打招呼: 设置完筛选条件之后, 保存设置,开启打招呼</h3>
+                <h3>四. 启动智能回复: 开发中... 对接Chatgpt开启智能回复 </h3>
+                <h3>五. 关闭所有服务: 关闭程序, 退出所有服务 </h3>
             </div>
         </div>
 
@@ -93,41 +110,33 @@
                                 </li>
                                 <li class="menu-zh12">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">性别/年龄设置</a>
+                                    <a href="javascript:;">经验要求</a>
                                 </li>
                                 <li class="menu-zh13">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">工作经验/地点设置</a>
+                                    <a href="javascript:;">学历要求</a>
                                 </li>
                                 <li class="menu-zh14">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">活跃度/期望岗位设置</a>
+                                    <a href="javascript:;">薪资待遇</a>
                                 </li>
                                 <li class="menu-zh15">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">薪资要求</a>
+                                    <a href="javascript:;">求职意向</a>
                                 </li>
                                 <li class="menu-zh16">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">学历要求</a>
+                                    <a href="javascript:;">简历关键字匹配</a>
                                 </li>
                                 <li class="menu-zh17">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">求职意向</a>
+                                    <a href="javascript:;">VIP筛选条件</a>
                                 </li>
                                 <li class="menu-zh18">
                                     <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">经验要求</a>
-                                </li>
-                                <li class="menu-zh19">
-                                    <div class="before" style="display: none"></div>
-                                    <a href="javascript:;">学校、公司/自我介绍</a>
-                                </li>
-                                <li class="menu-zh110">
-                                    <div class="before" style="display: none"></div>
                                     <a href="javascript:;">运行日志</a>
                                 </li>
-                                <li class="menu-zh111">
+                                <li class="menu-zh19">
                                     <div class="before" style="display: none"></div>
                                     <a href="javascript:;">检查日志</a>
                                 </li>
@@ -140,242 +149,614 @@
                             <form class="form">
                                 <!-- 开启牛人打招呼 -->
                                 <div class="item dzh1">
-                                    <input type="checkbox" class="kq" />
+                                    <input type="checkbox" class="kq" id="kq" />
                                     <label class="label">开启牛人打招呼</label>
                                 </div>
                                 <!-- 优先打招呼 -->
                                 <div class="item dzh2">
-                                    <input type="checkbox" class="yx" />
+                                    <input type="checkbox" class="yx" id="yx" />
                                     <label class="label">优先打招呼</label>
                                 </div>
                                 <!-- 不与同事沟通过的打招呼 -->
                                 <div class="item dzh3">
-                                    <input type="checkbox" class="ts" />
+                                    <input type="checkbox" class="ts" id="ts" />
                                     <label class="label">不与同事沟通过的打招呼</label>
                                 </div>
                                 <!-- 优先与不消耗沟通权益的牛人打招呼 -->
                                 <div class="item dzh4">
-                                    <input type="checkbox" class="bxh" />
+                                    <input type="checkbox" class="bxh" id="bxh" />
                                     <label class="label">优先与不消耗沟通权益的牛人打招呼</label
                     >
                   </div>
                   <!-- 权益上限自动下一贴 -->
                   <div class="item dzh5">
-                    <input type="checkbox" class="qy" />
+                    <input type="checkbox" class="qy" id="qy" />
                     <label class="label">权益上限自动下一贴</label>
                                 </div>
                                 <!-- 次数完成后自动下一贴 -->
                                 <div class="item dzh6">
-                                    <input type="checkbox" class="cs" />
+                                    <input type="checkbox" class="cs" id="cs" />
                                     <label class="label">次数完成后自动下一贴</label>
                                 </div>
-                                <!--  -->
+                                <!-- 推荐牛人 -->
                                 <div class="item dzh7">
-                                    <label class="label">每&nbsp;&nbsp;<input
+                                    <input type="checkbox" class="tj" id="tj" />
+                                    <label class="label">推荐牛人</label>
+                                </div>
+                                <!-- 新牛人 -->
+                                <div class="item dzh8">
+                                    <input type="checkbox" class="x" id="x" />
+                                    <label class="label">新牛人</label>
+                                </div>
+                                <!-- 看过我 -->
+                                <div class="item dzh9">
+                                    <input type="checkbox" class="kg" id="kg" />
+                                    <label class="label">看过我</label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 2、经验要求 -->
+                        <div class="content" style="display: none" id="zh12">
+                            <h2>经验要求</h2>
+                            <div class="item jy1">
+                                <form>
+                                    <label class="label">
+                      <input type="radio" class="jy" name="jy" id="jy1" />不限
+                    </label>
+                                    <br /><br />
+                                    <label class="label">
+                      <input
+                        type="radio"
+                        class="jy"
+                        name="jy"
+                        id="jy2"
+                      />多选<br />
+                      <input
+                        type="checkbox"
+                        class="jydx1"
+                        id="jy3"
+                      />在校/应届&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="jydx2"
+                        id="jy4"
+                      />一年以内<br /><input
+                        type="checkbox"
+                        class="jydx3"
+                        id="jy5"
+                      />1-3年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="jydx4"
+                        id="jy6"
+                      />3-5年<br /><input
+                        type="checkbox"
+                        class="jydx5"
+                        id="jy7"
+                      />5-10年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="jydx6"
+                        id="jy8"
+                      />10年以上
+                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 3、学历要求 -->
+                        <div class="content" style="display: none" id="zh13">
+                            <h2>学历要求</h2>
+                            <div class="item xl1">
+                                <form>
+                                    <label class="label">
+                      <input
+                        type="radio"
+                        class="xl"
+                        name="xl"
+                        id="xl1"
+                      />不限 </label
+                    ><br /><br />
+                    <label class="label">
+                      <input
+                        type="radio"
+                        class="xl"
+                        name="xl"
+                        id="xl2"
+                      />多选<br />
+                      <input
+                        type="checkbox"
+                        class="xldx1"
+                        id="xl3"
+                      />初中及以下&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xldx2"
+                        id="xl4"
+                      />中专/中技<br /><input
+                        type="checkbox"
+                        class="xldx3"
+                        id="xl5"
+                      />高中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xldx4"
+                        id="xl6"
+                      />大专<br /><input
+                        type="checkbox"
+                        class="xldx5"
+                        id="xl7"
+                      />本科&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xldx6"
+                        id="xl8"
+                      />硕士<br />
+                      <input
+                        type="checkbox"
+                        class="xldx7"
+                        id="xl9"
+                      />博士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xldx8"
+                        id="xl10"
+                      />全日制
+                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 4、薪资待遇 -->
+                        <div class="content" style="display: none" id="zh14">
+                            <h2>薪资待遇</h2>
+                            <div class="item xz1">
+                                <form>
+                                    <label class="label">
+                      <input
+                        type="radio"
+                        class="xz"
+                        name="xz"
+                        id="xz1"
+                      />不限 </label
+                    ><br /><br />
+                    <label class="label">
+                      <input
+                        type="radio"
+                        class="xz"
+                        name="xz"
+                        id="xz2"
+                      />多选<br />
+                      <input
+                        type="checkbox"
+                        class="xzdx1"
+                        id="xz3"
+                      />3k以下&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xzdx2"
+                        id="xz4"
+                      />3-5k<br /><input
+                        type="checkbox"
+                        class="xzdx3"
+                        id="xz5"
+                      />5-10k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xzdx4"
+                        id="xz6"
+                      />10-20k<br /><input
+                        type="checkbox"
+                        class="xzdx5"
+                        id="xz7"
+                      />20-50k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="xzdx6"
+                        id="xz8"
+                      />50k以上
+                    </label>
+                                </form>
+                            </div>
+                            <div class="item xz2">
+                                <form></form>
+                            </div>
+                        </div>
+                        <!-- 5、求职意向 -->
+                        <div class="content" style="display: none" id="zh15">
+                            <h2>求职意向</h2>
+                            <div class="item qz1">
+                                <form>
+                                    <label class="label">
+                      <input
+                        type="radio"
+                        class="qz"
+                        name="qz"
+                        id="qz1"
+                      />不限 </label
+                    ><br /><br />
+                    <label class="label">
+                      <input
+                        type="radio"
+                        class="qz"
+                        name="qz"
+                        id="qz2"
+                      />多选<br />
+                      <input
+                        type="checkbox"
+                        class="qzdx1"
+                        id="qz3"
+                      />离职-随时到岗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="qzdx2"
+                        id="qz4"
+                      />在职-暂不考虑<br /><input
+                        type="checkbox"
+                        class="qzdx3"
+                        id="qz5"
+                      />在职-考虑机会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="qzdx4"
+                        id="qz6"
+                      />在职-月内到岗
+                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 6、简历关键字匹配 -->
+                        <div class="content" style="display: none" id="zh16">
+                            <h2>简历关键字匹配</h2>
+                            <div class="item dd">
+                                <form>
+                                    <label class="label">关键字（多个关键字时，用空格隔开，如：地推 面访）</label
+                    >
+                    <div class="input">
+                      <input type="text" class="item-dd" id="dd" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- 7、VIP筛选条件 -->
+              <div class="content" style="display: none" id="zh17">
+                <h2>VIP筛选条件</h2>
+                <!-- 年龄 -->
+                <div class="item vip1">
+                  <form>
+                    <label class="label"
+                      >年龄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="nl"
+                        name="nl"
+                        id="nl1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="nl"
+                        name="nl"
+                        id="nl2"
+                      />只打招呼&nbsp;&nbsp;<input
                         type="text"
-                        class="k"
-                        name="time"
-                        id="zh1time1"
+                        class="nl"
+                        name="nl"
+                        id="nl3"
                         style="width: 20px; height: 20px"
                       />&nbsp;&nbsp;至&nbsp;&nbsp;<input
                         type="text"
-                        class="k"
-                        name="time"
-                        id="zh1time2"
+                        class="nl"
+                        name="nl"
+                        id="nl4"
                         style="width: 20px; height: 20px"
-                      />&nbsp;&nbsp;分钟执行一轮打招呼，最长停留&nbsp;&nbsp;<input
-                        type="text"
-                        class="k"
-                        name="time"
-                        id="zh1time3"
-                        style="width: 20px; height: 20px"
-                      />&nbsp;&nbsp;分钟
+                      />&nbsp;&nbsp;岁
                     </label>
-                                </div>
-                                <!--  -->
-                                <div class="item dzh8">
-                                    <label class="label">打招呼的帖子数量&nbsp;&nbsp;&nbsp;&nbsp;<input
-                        type="checkbox"
-                        class="sl"
-                      />1&nbsp;&nbsp;&nbsp;&nbsp;<input
-                        type="checkbox"
-                        class="sl"
-                      />2&nbsp;&nbsp;&nbsp;&nbsp;<input
-                        type="checkbox"
-                        class="sl"
-                      />3</label
-                    >
-                  </div>
-                  <!--  -->
-                  <div class="item dzh9">
-                    <label class="label"
-                      >第&nbsp;&nbsp;<input
-                        type="text"
-                        class="k"
-                        name="time"
-                        id="zh1time4"
-                        style="width: 20px; height: 20px"
-                      />&nbsp;&nbsp;张帖子，打招呼&nbsp;&nbsp;<input
-                        type="text"
-                        class="k"
-                        name="time"
-                        id="zh1time5"
-                        style="width: 20px; height: 20px"
-                      />&nbsp;&nbsp;次</label
-                    >
-                  </div>
-                </form>
-              </div>
-              <!-- 2、性别/年龄设置 -->
-              <div class="content" style="display: none" id="zh12">
-                <h2>性别/年龄设置</h2>
-                  <form class="form" id="age">
-                      性别:
-                      <input type="radio" name="gender" value="不限" />不限
-                      <input type="radio" name="gender" value="男" />男
-                      <input type="radio" name="gender" value="女" />女
+                                </form>
+                            </div>
+                            <!-- 性别 -->
+                            <div class="item vip2">
+                                <form>
+                                    <label class="label">性别&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="xb"
+                        name="xb"
+                        id="xb1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="xb"
+                        name="xb"
+                        id="xb2"
+                      />男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="xb"
+                        name="xb"
+                        id="xb3"
+                      />女
+                    </label>
+                                </form>
+                            </div>
+                            <!-- 是否与同事交换简历 -->
+                            <div class="item vip3">
+                                <form>
+                                    <label class="label">是否与同事交换简历&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="jhjl"
+                        name="jhjl"
+                        id="jh1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="jhjl"
+                        name="jhjl"
+                        id="jh2"
+                      />近一个月没有
+                    </label>
+                                </form>
+                            </div>
+                            <!-- 近期没有看过 -->
+                            <div class="item vip4">
+                                <form>
+                                    <label class="label">近期没有看过
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="jq"
+                        name="jq"
+                        id="jq1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="jq"
+                        name="jq"
+                        id="jq2"
+                      />近14天没有
+                    </label>
+                                </form>
+                            </div>
 
-                  </form>
-              </div>
-              <!-- 3、工作经验/地点设置 -->
-              <div class="content" style="display: none" id="zh13">
-                <h2>工作经验/地点设置</h2>
-              </div>
-              <!-- 4、活跃度/期望岗位设置 -->
-              <div class="content" style="display: none" id="zh14">
-                <h2>活跃度/期望岗位设置</h2>
-              </div>
-              <!-- 5、薪资要求 -->
-              <div class="content" style="display: none" id="zh15">
-                <h2>薪资要求</h2>
-              </div>
-              <!-- 6、学历要求 -->
-              <div class="content" style="display: none" id="zh16">
-                <h2>学历要求</h2>
-              </div>
-              <!-- 7、求职意向 -->
-              <div class="content" style="display: none" id="zh17">
-                <h2>求职意向</h2>
-              </div>
-              <!-- 8、经验要求 -->
-              <div class="content" style="display: none" id="zh18">
-                <h2>经验要求</h2>
-              </div>
-              <!-- 9、学校、公司/自我介绍 -->
-              <div class="content" style="display: none" id="zh19">
-                <h2>学校、公司/自我介绍</h2>
-              </div>
-              <!-- 10、运行日志 -->
-              <div class="content" style="display: none" id="zh110">
-                <h2>运行日志</h2>
-              </div>
-              <!-- 11、检查日志 -->
-              <div class="content" style="display: none" id="zh111">
-                <h2>检查日志</h2>
-              </div>
+                            <!-- 跳槽频率 -->
+                            <div class="item vip5">
+                                <form>
+                                    <label class="label">
+                      跳槽频率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="tc"
+                        name="tc"
+                        id="tc1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="tc"
+                        name="tc"
+                        id="tc2"
+                      />5年少于3份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="tc"
+                        name="tc"
+                        id="tc3"
+                      />平均每份工作大于1年
+                    </label>
+                                </form>
+                            </div>
+                            <!-- 活跃度 -->
+                            <div class="item vip6">
+                                <form>
+                                    <label class="label">活跃度&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy2"
+                      />刚刚活跃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy3"
+                      />今日活跃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy4"
+                      />3日内活跃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy5"
+                      />本周活跃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy6"
+                      />本月活跃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="checkbox"
+                        class="hyd"
+                        name="hyd"
+                        id="hy7"
+                      />在线
+                    </label>
+                                </form>
+                            </div>
+                            <!-- 院校 -->
+                            <div class="item vip7">
+                                <form>
+                                    <label class="label">院校&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx2"
+                      />985&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx3"
+                      />211&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx4"
+                      />双一流学院&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx5"
+                      />留学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx6"
+                      />有出国经历&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="yx"
+                        name="yx"
+                        id="yx7"
+                      />国内外名校
+                    </label>
+                                </form>
+                            </div>
+                            <!-- 专业 -->
+                            <div class="item vip8">
+                                <form>
+                                    <label class="label">
+                      专业&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy1"
+                      />不限&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy2"
+                      />工商管理类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy3"
+                      />金融学类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy4"
+                      />管理工程类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy5"
+                      />财会类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy6"
+                      />电子商务类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                        type="radio"
+                        class="zy"
+                        name="zy"
+                        id="zy7"
+                      />其他
+                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 8、运行日志 -->
+                        <div class="content" style="display: none" id="zh18">
+                            <h2>运行日志</h2>
+                        </div>
+                        <!-- 9、检查日志 -->
+                        <div class="content" style="display: none" id="zh19">
+                            <h2>检查日志</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <!-- 打招呼设置2 -->
-      <div class="item zh2" style="display: none">
-        <div class="wrap">
-          <div class="full">
-            <div class="entry">
-              <!-- 左侧栏 -->
-              <div class="nav">
-                <ul class="menu">
-                  <li class="menu-zh21">
-                    <div class="before" style="display: block"></div>
-                    <a href="javascript:;">开启简历关键词筛选</a>
-                  </li>
-                  <li class="menu-zh22">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">开启区域筛选</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- 右侧栏 -->
-              <!-- 1、开启简历关键词筛选 -->
-              <div class="content" style="display: block" id="zh21">
-                <h2>开启简历关键词筛选</h2>
-              </div>
-              <!-- 2、开启区域筛选 -->
-              <div class="content" style="display: none" id="zh22">
-                <h2>开启区域筛选</h2>
-              </div>
+        <!-- 打招呼设置2 -->
+        <div class="item zh2" style="display: none">
+            <div class="wrap">
+                <div class="full">
+                    <div class="entry">
+                        <!-- 左侧栏 -->
+                        <div class="nav" id="item_zh2">
+<!--                            <ul class="menu">-->
+<!--                                <li class="menu-zh21">-->
+<!--                                    <div class="before" style="display: block"></div>-->
+<!--                                    <a href="javascript:;">开启简历关键词筛选</a>-->
+<!--                                </li>-->
+<!--                                <li class="menu-zh22">-->
+<!--                                    <div class="before" style="display: none"></div>-->
+<!--                                    <a href="javascript:;">开启区域筛选</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+                        </div>
+                        <!-- 右侧栏 -->
+                        <!-- 1、开启简历关键词筛选 -->
+<!--                        <div class="content" style="display: block" id="zh21">-->
+<!--                            <h2>开启简历关键词筛选</h2>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; 2、开启区域筛选 &ndash;&gt;-->
+<!--                        <div class="content" style="display: none" id="zh22">-->
+<!--                            <h2>开启区域筛选</h2>-->
+<!--                        </div>-->
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <!-- 沟通设置 -->
-      <div class="item gt" style="display: none">
-        <div class="wrap">
-          <div class="full">
-            <div class="entry">
-              <!-- 左侧栏 -->
-              <div class="nav">
-                <ul class="menu">
-                  <li class="menu-gt1">
-                    <div class="before" style="display: block"></div>
-                    <a href="javascript:;">账号和回复时间</a>
-                  </li>
-                  <li class="menu-gt2">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">首句回复内容</a>
-                  </li>
-                  <li class="menu-gt3">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">第二句回复内容</a>
-                  </li>
-                  <li class="menu-gt4">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">交换设置</a>
-                  </li>
-                  <li class="menu-gt5">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">定时运行</a>
-                  </li>
-                  <li class="menu-gt6">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">不沟通的帖子</a>
-                  </li>
-                  <li class="menu-gt7">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">年龄/性别设置</a>
-                  </li>
-                  <li class="menu-gt8">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">学历设置</a>
-                  </li>
-                  <li class="menu-gt9">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">过滤沟通</a>
-                  </li>
-                  <li class="menu-gt10">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">其他设置</a>
-                  </li>
-                  <li class="menu-gt11">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">运行日志</a>
-                  </li>
-                  <li class="menu-gt12">
-                    <div class="before" style="display: none"></div>
-                    <a href="javascript:;">沟通日志</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- 右侧栏 -->
-              <!-- 1、账号和回复时间 -->
-              <div class="content" style="display: block" id="gt1">
-                <h2>账号和回复时间</h2>
-                <form class="form">
-                  <!-- 账号 -->
-                  <div class="item zh">
-                    <label class="label">账号</label>
+        <!-- 沟通设置 -->
+        <div class="item gt" style="display: none">
+            <div class="wrap">
+                <div class="full">
+                    <div class="entry">
+                        <!-- 左侧栏 -->
+                        <div class="nav">
+                            <ul class="menu">
+                                <li class="menu-gt1">
+                                    <div class="before" style="display: block"></div>
+                                    <a href="javascript:;">账号和回复时间</a>
+                                </li>
+                                <li class="menu-gt2">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">首句回复内容</a>
+                                </li>
+                                <li class="menu-gt3">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">第二句回复内容</a>
+                                </li>
+                                <li class="menu-gt4">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">交换设置</a>
+                                </li>
+                                <li class="menu-gt5">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">定时运行</a>
+                                </li>
+                                <li class="menu-gt6">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">不沟通的帖子</a>
+                                </li>
+                                <li class="menu-gt7">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">年龄/性别设置</a>
+                                </li>
+                                <li class="menu-gt8">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">学历设置</a>
+                                </li>
+                                <li class="menu-gt9">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">过滤沟通</a>
+                                </li>
+                                <li class="menu-gt10">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">其他设置</a>
+                                </li>
+                                <li class="menu-gt11">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">运行日志</a>
+                                </li>
+                                <li class="menu-gt12">
+                                    <div class="before" style="display: none"></div>
+                                    <a href="javascript:;">沟通日志</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 右侧栏 -->
+                        <!-- 1、账号和回复时间 -->
+                        <div class="content" style="display: block" id="gt1">
+                            <h2>账号和回复时间</h2>
+                            <form class="form">
+                                <!-- 账号 -->
+                                <div class="item zh">
+                                    <label class="label">账号</label>
                                     <select name="account" id="account">
                       <option value="">账号1</option>
                     </select>
@@ -475,45 +856,80 @@
               <!-- 4、交换设置 -->
               <div class="content" style="display: none" id="gt4">
                 <h2>交换设置</h2>
-              </div>
-              <!-- 5、定时运行 -->
-              <div class="content" style="display: none" id="gt5">
-                <h2>定时运行</h2>
-              </div>
-              <!-- 6、不沟通的帖子 -->
-              <div class="content" style="display: none" id="gt6">
-                <h2>不沟通的帖子</h2>
-              </div>
-              <!-- 7、年龄/性别设置 -->
-              <div class="content" style="display: none" id="gt7">
-                <h2>年龄/性别设置</h2>
-              </div>
-              <!-- 8、学历设置 -->
-              <div class="content" style="display: none" id="gt8">
-                <h2>学历设置</h2>
-              </div>
-              <!-- 9、过滤沟通 -->
-              <div class="content" style="display: none" id="gt9">
-                <h2>过滤沟通</h2>
-              </div>
-              <!-- 10、其他设置 -->
-              <div class="content" style="display: none" id="gt10">
-                <h2>其他设置</h2>
-              </div>
-              <!-- 11、运行日志 -->
-              <div class="content" style="display: none" id="gt11">
-                <h2>运行日志</h2>
-              </div>
-              <!-- 12、沟通日志 -->
-              <div class="content" style="display: none" id="gt12">
-                <h2>沟通日志</h2>
-              </div>
+                <form>
+                  <div class="item">
+                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 5、定时运行 -->
+                        <div class="content" style="display: none" id="gt5">
+                            <h2>定时运行</h2>
+                            <form>
+                                <div class="item">
+                                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 6、不沟通的帖子 -->
+                        <div class="content" style="display: none" id="gt6">
+                            <h2>不沟通的帖子</h2>
+                            <form>
+                                <div class="item">
+                                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 7、年龄/性别设置 -->
+                        <div class="content" style="display: none" id="gt7">
+                            <h2>年龄/性别设置</h2>
+                            <form>
+                                <div class="item">
+                                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 8、学历设置 -->
+                        <div class="content" style="display: none" id="gt8">
+                            <h2>学历设置</h2>
+                            <form>
+                                <div class="item">
+                                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 9、过滤沟通 -->
+                        <div class="content" style="display: none" id="gt9">
+                            <h2>过滤沟通</h2>
+                            <form>
+                                <div class="item">
+                                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 10、其他设置 -->
+                        <div class="content" style="display: none" id="gt10">
+                            <h2>其他设置</h2>
+                            <form>
+                                <div class="item">
+                                    <label class="label"></label>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 11、运行日志 -->
+                        <div class="content" style="display: none" id="gt11">
+                            <h2>运行日志</h2>
+                        </div>
+                        <!-- 12、沟通日志 -->
+                        <div class="content" style="display: none" id="gt12">
+                            <h2>沟通日志</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </body>
-<script type="text/javascript" src="{{ url_for('static',filename='jquery-3.5.1.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='bot.js') }}"></script>
+
+</body>
+
 </html>

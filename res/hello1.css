@@ -120,6 +120,10 @@
     float: left;
 }
 
+.zh1 .dzh2 {
+    float: left;
+}
+
 .zh1 .dzh3 {
     float: left;
 }
@@ -142,7 +146,7 @@
 
 .zh1 .dzh1 .label {
     line-height: 40px;
-    width: 400px;
+    width: 300px;
     margin: 0;
     font-size: 14px;
     color: #7e7e7e;
@@ -152,7 +156,7 @@
 
 .zh1 .dzh2 .label {
     line-height: 40px;
-    width: 120px;
+    width: 250px;
     margin: 0;
     font-size: 14px;
     color: #7e7e7e;
@@ -162,7 +166,7 @@
 
 .zh1 .dzh3 .label {
     line-height: 40px;
-    width: 400px;
+    width: 300px;
     margin: 0;
     font-size: 14px;
     color: #7e7e7e;
@@ -182,7 +186,7 @@
 
 .zh1 .dzh5 .label {
     line-height: 40px;
-    width: 400px;
+    width: 250px;
     margin: 0;
     font-size: 14px;
     color: #7e7e7e;
@@ -202,6 +206,172 @@
 
 .zh1 .dzh7 .label {
     line-height: 40px;
+    width: 300px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh8 .label {
+    line-height: 40px;
+    width: 250px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dzh9 .label {
+    line-height: 40px;
+    width: 150px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 经验要求 */
+
+.zh1 .jy1 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 学历要求 */
+
+.zh1 .xl1 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 薪资要求 */
+
+.zh1 .xz1 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 求职意向 */
+
+.zh1 .qz1 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 指定偏好地点 */
+
+.zh1 .dd .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.zh1 .dd .input {
+    width: 600px;
+}
+
+.zh1 .dd .item-dd {
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 14px;
+    color: #474747;
+    border: 1px solid #d3d3d3;
+    line-height: 18px;
+    outline: 0;
+    box-sizing: border-box;
+    background: 0 0;
+    border-radius: 4px;
+    font-family: inherit;
+    overflow: visible;
+    margin: 0;
+}
+
+
+/* VIP筛选条件 */
+
+.zh1 .vip1 {
+    float: left;
+}
+
+.zh1 .vip2 {
+    float: left;
+}
+
+.zh1 .vip3 {
+    float: left;
+}
+
+.zh1 .vip4 {
+    float: left;
+}
+
+.zh1 .vip5 {
+    float: left;
+}
+
+.zh1 .vip6 {
+    float: left;
+}
+
+.zh1 .vip7 {
+    float: left;
+}
+
+.zh1 .vip8 {
+    float: left;
+}
+
+
+/* 年龄 */
+
+.zh1 .vip1 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 性别 */
+
+.zh1 .vip2 .label {
+    line-height: 40px;
     width: 600px;
     margin: 0;
     margin-left: 150px;
@@ -211,22 +381,79 @@
     flex-shrink: 0;
 }
 
-.zh1 .dzh8 .label {
+
+/* 是否与同事交换简历 */
+
+.zh1 .vip3 .label {
     line-height: 40px;
-    width: 400px;
+    width: 600px;
     margin: 0;
-    margin-left: 230px;
     font-size: 14px;
     color: #7e7e7e;
     font-weight: 400;
     flex-shrink: 0;
 }
 
-.zh1 .dzh9 .label {
+
+/* 近期没有看过 */
+
+.zh1 .vip4 .label {
     line-height: 40px;
-    width: 300px;
+    width: 600px;
     margin: 0;
-    margin-left: 230px;
+    margin-left: 130px;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 跳槽频率 */
+
+.zh1 .vip5 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 活跃度 */
+
+.zh1 .vip6 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 院校 */
+
+.zh1 .vip7 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+
+/* 专业 */
+
+.zh1 .vip8 .label {
+    line-height: 40px;
+    width: 600px;
+    margin: 0;
     font-size: 14px;
     color: #7e7e7e;
     font-weight: 400;
